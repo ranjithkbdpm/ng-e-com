@@ -1,0 +1,39 @@
+<div id="formWrapper" class="d-flex justify-content-center align-items-center">
+    <div class="formWarp p-4 rounded-2" style="min-width: 400px;">
+        <form [formGroup]="register" (ngSubmit)="onRegister()" class="d-flex flex-column">
+            <div class="mb-2">
+                <h1 class="text-center loginHead">Register</h1>
+            </div>
+            <div class="em mb-2 w-100">
+                <label for="firstname" class="form-label loginText">Firstname</label>
+                <input type="text" class="form-control" formControlName="firstname" placeholder="Firstname">
+            </div>
+            <div class="em mb-2 w-100">
+                <label for="lastname" class="form-label loginText">Lastname</label>
+                <input type="text" class="form-control" formControlName="lastname" placeholder="Lastname">
+            </div>
+            <div class="em mb-2 w-100">
+                <label for="email" class="form-label loginText">Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="Email">
+            </div>
+            <div class="pw mb-2 w-100">
+                <label for="password" class="form-label loginText">Password</label>
+                <input id="ps"  [type]="showpw ?'password':'text'" class="form-control" formControlName="password" placeholder="password">
+            </div> 
+            <div class="pw mb-2 w-100">
+                <label for="password" class="form-label loginText">Confirm Password</label>
+                <input id="ps"  [type]="showpw ?'password':'text'" class="form-control" [(ngModel)]="confirmPassword" placeholder="password">
+            </div>   
+            <div class="showps d-flex align-items-center">
+                <input type="checkbox" id="pwCheck" class="me-2" (change)="toggleShowpw()" >
+                <label for="pwCheck" class="form-label loginText">Show Password</label>
+            </div>
+            <div class="formbutton text-center mt-2 mb-0">                             
+                <button type="submit" class="btn btnLoginColor w-100 mb-2">Submit</button>
+                <p class="text-center mb-0">
+                    <a href="site/login" class="loginText"><small>Already have an account?</small></a>  
+                </p>
+            </div>       
+        </form>
+    </div>    
+</div>
